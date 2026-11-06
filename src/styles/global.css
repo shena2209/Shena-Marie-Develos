@@ -1,4 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500;800&family=Karla:wght@400;500&display=swap");
 @import "tailwindcss";
 
 
-@custom-variant dark (&:where(.dark, .dark *))
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --base: #BFE3F8;
+    --accent: #2CC9DD;
+    --pop: #0A0A0A;
+    --btn-ink: #FFFFFF;
+    --ink: #0B1B27;
+    --on-accent: #06141C;
+    --icon-c: #1FB5CA;
+    --glass: rgba(255, 255, 255, .38);
+    --glass-b: rgba(255, 255, 255, .7);
+}
+
+.dark {
+    --base: #000000;
+    --accent: #121212;
+    --pop: #FFFFFF;
+    --btn-ink: #0A0A0A;
+    --ink: #F5F5F5;
+    --on-accent: #F5F5F5;
+    --icon-c: #BDBDBD;
+    --glass: rgba(255, 255, 255, .07);
+    --glass-b: rgba(255, 255, 255, .18);
+}
+
+@layer components {
+    .glass-card {
+        background: var(--glass);
+        border: 1px solid var(--glass-b);
+        border-radius: 1.5rem;
+        backdrop-filter: blur(18px) saturate(150%);
+        -webkit-backdrop-filter: blur(18px) saturate(150%);
+        box-shadow: 0 8px 32px rgba(8, 40, 70, .18);
+    }
+
+    .btn {
+        background: var(--pop);
+        color: var(--btn-ink);
+        font-weight: 600;
+        border-radius: 9999px;
+        padding: .75rem 1.5rem;
+        border: 1px solid var(--glass-b);
+    }
+
+    .band {
+        background: var(--accent);
+        color: var(--on-accent);
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--base);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    transition: background-color .5s, color .5s;
+}
+
+h1,
+h2,
+h3,
+.brand {
+    font-family: 'Rubik', sans-serif;
+}
+
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    height: 4px;
+    width: 100%;
+    background: var(--pop);
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.blob {
+    position: fixed;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.blob-in {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.dark .blob,
+.dark .blob-in {
+    filter: grayscale(1);
+    opacity: .35;
+}
+
+.ic {
+    fill: var(--pop);
+}
+
+.ic-c {
+    fill: var(--icon-c);
+}
+
+.tile {
+    background: rgba(255, 255, 255, .3);
+}
+
+#nav a.active {
+    text-decoration: underline;
+    text-decoration-color: var(--pop);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+
+:focus-visible {
+    outline: 3px solid var(--pop);
+    outline-offset: 3px;
+}
+
+input,
+textarea {
+    background: transparent;
+    border: 1px solid var(--glass-b);
+    border-radius: .75rem;
+    padding: .7rem .9rem;
+    width: 100%;
+    color: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: inherit;
+    opacity: .6;
+}

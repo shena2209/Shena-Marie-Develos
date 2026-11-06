@@ -1,0 +1,47 @@
+<section id="contact" class="reveal px-6 md:px-[8vw] py-28">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+            <h2 class="font-extrabold text-4xl md:text-6xl">
+                Find the cart or book us.
+            </h2>
+            <p class="mt-6 max-w-sm">
+                We park at the corner market from 5 pm to midnight, Tuesday to
+                Sunday. Catering requests need three days' notice.
+            </p>
+        </div>
+        <form action="#" id="contactForm" class="glass-card p-8 grid gap-4">
+            <label for="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+            />
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+            />
+
+            <label for="message">Message</label>
+            <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Event date and guest count"></textarea>
+
+            <button type="submit" class="btn justify-self-start"
+                >Send Message</button
+            >
+            <p id="formMsg" class="opacity-0" role="status">
+                Message sent. We reply within one day.
+            </p>
+        </form>
+    </div>
+</section>
