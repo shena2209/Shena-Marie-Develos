@@ -1,0 +1,24 @@
+<section id="new-form-section" class="glass-card w-full p-8 md:p-12 flex flex-col mt-12 text-left">
+  <h2 class="text-3xl md:text-4xl text-[hotpink] md:text-blue-600 mb-8 text-center font-normal tracking-wide">
+    Let's build together!
+  </h2>
+
+  <form class="flex flex-col gap-6 w-full max-w-lg mx-auto text-center text-sm" action="#">
+    <label for="new-name" class="font-medium text-black/80 dark:text-neutral-300">Name</label>
+    <input type="text" id="new-name" name="name" required
+      class="p-3 rounded-lg bg-transparent border border-slate-400 dark:border-slate-600 outline-none text-black dark:text-white text-center focus:border-pink-600 transition-colors" />
+
+    <label for="new-email" class="font-medium text-black/80 dark:text-neutral-300">Email</label>
+    <input type="email" id="new-email" name="email" required
+      class="p-3 rounded-lg bg-transparent border border-slate-400 dark:border-slate-600 outline-none text-black dark:text-white text-center focus:border-pink-600 transition-colors" />
+
+    <label for="new-message" class="font-medium text-black/80 dark:text-neutral-300">Message</label>
+    <textarea id="new-message" name="message" rows="5" required
+      class="p-3 rounded-lg bg-transparent border border-slate-400 dark:border-slate-600 outline-none text-black dark:text-white text-center resize-none focus:border-pink-600 transition-colors"></textarea>
+
+    <button type="submit"
+      class="mt-4 border-0 rounded-[10px] bg-black px-6 py-3 text-white transition-colors duration-1000 hover:bg-[pink] hover:text-black font-medium w-full">
+      Send Message
+    </button>
+  </form>
+</section>

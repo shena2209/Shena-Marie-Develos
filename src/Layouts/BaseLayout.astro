@@ -2,22 +2,21 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-const name = "Shena Develos";
-const position = "AI DEEP";
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{name} | {position}</title>
+        <title>Shena</title>
     </head>
-    <body>
+    <body class="bg-gradient-to-br from-pink-100 via-pink-200 to-pink-300 dark:from-black dark:via-black dark:to-black text-black dark:text-neutral-100 font-sans flex flex-col min-h-screen">
         <Header />
         <slot />
         <Footer />
+        <script src="../script/animation.js"></script>
     </body>
 </html>

@@ -1,17 +1,117 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import About from "../sections/About.astro";
-import Contact from "../sections/Contact.astro";
-import Hero from "../sections/Hero.astro";
-import Projects from "../sections/Projects.astro";
-const name = "Shena Develos";
-const position = "AI DEEP";
+import BaseLayout from "../Layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-	<h1 class="text-red-700">{name} | {position}</h1>
-	<Hero />
-	<About />
-	<Projects />
-	<Contact />
+<main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8 flex flex-col gap-8 pb-32">
+  <section id="cards-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 relative items-start">
+    <article id="about" class="glass-card flip-card p-8 flex flex-col justify-center text-left">
+      <h2 class="text-xl font-bold text-black dark:text-neutral-100 mb-2 underline decoration-pink-700 dark:decoration-neutral-300 underline-offset-4">
+        About
+      </h2>
+      <p class="text-sm text-black/80 dark:text-neutral-300 leading-relaxed mt-2">
+        OKAY NANI SIRRRRR
+      </p>
+    </article>
+
+    <article id="services" class="glass-card flip-card p-8 flex flex-col justify-center text-left">
+      <h2 class="text-xl font-bold text-black dark:text-neutral-100 mb-2 underline decoration-pink-700 dark:decoration-neutral-300 underline-offset-4">
+        Services
+      </h2>
+      <p class="text-sm text-black/80 dark:text-neutral-300 leading-relaxed mt-2">
+        SERVICE NA NIMO
+      </p>
+    </article>
+
+    <article id="contact" class="glass-card flip-card p-8 flex flex-col text-left">
+      <h2 class="text-xl font-bold text-black dark:text-neutral-100 mb-2 underline decoration-pink-700 dark:decoration-neutral-300 underline-offset-4">
+        Contact
+      </h2>
+
+      <form class="flex flex-col gap-4 w-full text-left text-sm mt-4" action="#">
+        <div class="flex flex-col gap-1">
+          <label for="name" class="font-medium text-black/80 dark:text-neutral-300">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="p-2 rounded-lg bg-transparent border-b-2 border-pink-700/50 dark:border-neutral-600 outline-none text-black dark:text-white focus:border-pink-600 transition-colors"
+          />
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <label for="email" class="font-medium text-black/80 dark:text-neutral-300">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="p-2 rounded-lg bg-transparent border-b-2 border-pink-700/50 dark:border-neutral-600 outline-none text-black dark:text-white focus:border-pink-600 transition-colors"
+          />
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <label for="message" class="font-medium text-black/80 dark:text-neutral-300">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="3"
+            required
+            class="p-2 rounded-lg bg-transparent border-b-2 border-pink-700/50 dark:border-neutral-600 outline-none text-black dark:text-white resize-none focus:border-pink-600 transition-colors"
+          ></textarea>
+        </div>
+
+        <button
+          class="mt-4 rounded-full bg-black text-pink-200 px-4 py-2 hover:bg-purple-900 hover:text-white transition-colors duration-300 font-semibold w-full"
+          type="submit"
+        >
+          Send Message
+        </button>
+      </form>
+    </article>
+  </section>
+
+  <section id="new-form-section" class="glass-card w-full p-8 md:p-12 flex flex-col mt-12 text-left">
+    <h2 class="text-3xl md:text-4xl text-[hotpink] md:text-blue-600 mb-8 text-center font-normal tracking-wide">
+      Let's build together!
+    </h2>
+
+    <form class="flex flex-col gap-6 w-full max-w-lg mx-auto text-center text-sm" action="#">
+      <label for="new-name" class="font-medium text-black/80 dark:text-neutral-300">Name</label>
+      <input
+        type="text"
+        id="new-name"
+        name="name"
+        required
+        class="p-3 rounded-lg bg-transparent border border-slate-400 dark:border-slate-600 outline-none text-black dark:text-white text-center focus:border-pink-600 transition-colors"
+      />
+
+      <label for="new-email" class="font-medium text-black/80 dark:text-neutral-300">Email</label>
+      <input
+        type="email"
+        id="new-email"
+        name="email"
+        required
+        class="p-3 rounded-lg bg-transparent border border-slate-400 dark:border-slate-600 outline-none text-black dark:text-white text-center focus:border-pink-600 transition-colors"
+      />
+
+      <label for="new-message" class="font-medium text-black/80 dark:text-neutral-300">Message</label>
+      <textarea
+        id="new-message"
+        name="message"
+        rows="5"
+        required
+        class="p-3 rounded-lg bg-transparent border border-slate-400 dark:border-slate-600 outline-none text-black dark:text-white text-center resize-none focus:border-pink-600 transition-colors"
+      ></textarea>
+
+      <button
+        class="mt-4 border-0 rounded-[10px] bg-black px-6 py-3 text-white transition-colors duration-1000 hover:bg-[pink] hover:text-black font-medium w-full"
+        type="submit"
+      >
+        Send Message
+      </button>
+    </form>
+  </section>
+</main>
 </BaseLayout>

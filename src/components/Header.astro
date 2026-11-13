@@ -1,91 +1,21 @@
-<svg width="0" height="0" class="absolute" aria-hidden="true">
-    <symbol id="skewer" viewBox="0 0 100 100">
-        <path d="M12 88 84 16l4 4-72 72z"></path>
-        <circle cx="62" cy="38" r="12"></circle>
-        <circle cx="42" cy="58" r="12"></circle>
-        <circle cx="26" cy="74" r="10"></circle>
-    </symbol>
-    <symbol id="bowl" viewBox="0 0 100 100">
-        <path d="M8 44h84c0 26-18 42-42 42S8 70 8 44z"></path>
-        <path
-            d="M34 34c-6-8 6-12 0-22h6c6 10-6 14 0 22zm22 0c-6-8 6-12 0-22h6c6 10-6 14 0 22z"
-        ></path>
-    </symbol>
-    <symbol id="cup" viewBox="0 0 100 100">
-        <path d="M22 30h56l-6 60H28z"></path>
-        <path d="M30 12h40l4 12H26z"></path>
-    </symbol>
-</svg>
+<div class="max-w-5xl mx-auto w-full px-4 pt-8 flex flex-col gap-8">
+  <section class="text-center flex flex-col items-center gap-4 mt-6">
+    <div id="progressBar" class="fixed top-0 left-0 z-50 h-1 w-full origin-left bg-orange-500"></div>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-pink-600 dark:text-neutral-100 drop-shadow-md tracking-wider">
+      SHENA
+    </h1>
+    <div class="flex gap-3">
+      <button id="toggledark" class="btn-glass">Toggle</button>
+      <button id="Replay" class="btn-glass">Replay</button>
+    </div>
+  </section>
 
-<div id="progressBar"></div>
-<div
-    class="blob w-[60vw] h-[60vw]-left-[15vw] top-[10vh]"
-    data-depth="0.6"
-    style="background:radial-gradient(circle,rgba(44,201,221,.65),transparent 70%)"
->
+  <nav class="glass-card flex items-center justify-between px-6 py-3 rounded-full">
+    <span class="text-black dark:text-neutral-200 font-bold text-sm tracking-wide">SHENA2209</span>
+    <div class="hidden md:flex gap-8">
+      <a href="#about" class="hover:text-purple-900 dark:hover:text-white transition-colors text-xs font-medium text-black dark:text-neutral-300">About</a>
+      <a href="#services" class="hover:text-purple-900 dark:hover:text-white transition-colors text-xs font-medium text-black dark:text-neutral-300">Services</a>
+      <a href="#contact" class="hover:text-purple-900 dark:hover:text-white transition-colors text-xs font-medium text-black dark:text-neutral-300">Contact</a>
+    </div>
+  </nav>
 </div>
-<div
-    class="blob w-[40vw] h-[40vw] right-[-8vw] top-[60vh]"
-    data-depth="1.2"
-    style="background:radial-gradient(circle,rgba(60,120,220,.4),transparent 70%)"
->
-</div>
-<div
-    class="blob w-[24vw] h-[24vw] right-[18vw] top-[8vh]"
-    data-depth="0.9"
-    style="background:radial-gradient(circle,rgba(255,255,255,.8),transparent 70%)"
->
-</div>
-
-<header>
-    <nav
-        id="nav"
-        aria-label="Main navigation"
-        class="glass-card fixed top-3 inset-x-3 md:inset-x-[6vw] z-40 flex flex-wrap items-center justify-between gap-4 px-5 py-3!rounded-full"
-    >
-        <a class="brand text-xl font-extrabold" href="#top">Street Foods</a>
-        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Menu</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button
-            id="darkModeToggle"
-            type="button"
-            aria-pressed="false"
-            class="btn !py-1.5!px-4 text-sm"
-        >
-            Dark Mode
-        </button>
-    </nav>
-</header>
-
-<script>
-    const darkModeToggle =
-        document.querySelector<HTMLButtonElement>("#darkModeToggle");
-
-    darkModeToggle?.addEventListener("click", () => {
-        const isDark = document.documentElement.classList.toggle("dark");
-        darkModeToggle.setAttribute("aria-pressed", String(isDark));
-        darkModeToggle.textContent = isDark ? "Light Mode" : "Dark Mode";
-    });
-
-    const progressBar = document.querySelector<HTMLElement>("#progressBar");
-
-    const updateProgress = () => {
-        const scrollableHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-        const progress =
-            scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
-
-        if (progressBar) {
-            progressBar.style.transform = `scaleX(${progress})`;
-        }
-    };
-
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    updateProgress();
-</script>

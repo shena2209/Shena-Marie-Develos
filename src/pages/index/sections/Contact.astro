@@ -1,0 +1,29 @@
+<div id="contact" class="glass-card flip-card p-8 flex flex-col text-left">
+  <h2 class="text-xl font-bold text-black dark:text-neutral-100 mb-2 underline decoration-pink-700 dark:decoration-neutral-300 underline-offset-4">
+    Contact
+  </h2>
+
+  <form class="flex flex-col gap-4 w-full text-left text-sm mt-4" action="#">
+    {[
+      { id: "name", label: "Name", type: "text" },
+      { id: "email", label: "Email", type: "email" },
+    ].map((f) => (
+      <div class="flex flex-col gap-1">
+        <label for={f.id} class="font-medium text-black/80 dark:text-neutral-300">{f.label}</label>
+        <input type={f.type} id={f.id} name={f.id} required
+          class="p-2 rounded-lg bg-transparent border-b-2 border-pink-700/50 dark:border-neutral-600 outline-none text-black dark:text-white focus:border-pink-600 transition-colors" />
+      </div>
+    ))}
+
+    <div class="flex flex-col gap-1">
+      <label for="message" class="font-medium text-black/80 dark:text-neutral-300">Message</label>
+      <textarea name="message" id="message" rows="3" required
+        class="p-2 rounded-lg bg-transparent border-b-2 border-pink-700/50 dark:border-neutral-600 outline-none text-black dark:text-white resize-none focus:border-pink-600 transition-colors"></textarea>
+    </div>
+
+    <button type="submit"
+      class="mt-4 rounded-full bg-black text-pink-200 px-4 py-2 hover:bg-purple-900 hover:text-white transition-colors duration-300 font-semibold w-full">
+      Send Message
+    </button>
+  </form>
+</div>
